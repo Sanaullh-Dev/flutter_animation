@@ -21,7 +21,7 @@ class _ImageCardState extends State<ImageCard> {
               itemCount: locations.length,
               itemBuilder: (context, index) {
                 final location = locations[index];
-                return Center();
+                return ItemCard();
               },
               onPageChanged: (index) => setState(() {
                 pageIndex = index;
@@ -35,4 +35,30 @@ class _ImageCardState extends State<ImageCard> {
           const SizedBox(height: 12)
         ],
       );
+}
+
+class ItemCard extends StatefulWidget {
+  const ItemCard({super.key});
+
+  @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4),
+      child: Stack(
+        alignment: Alignment.center,        
+        children: [
+          Container()
+        ],
+      ),
+    );
+  }
+
+  
 }
