@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation/data/locations.dart';
+import 'package:flutter_animation/widget/image_card.dart';
 
-class ImageCard extends StatefulWidget {
-  const ImageCard({super.key});
+class LocationsCard extends StatefulWidget {
+  const LocationsCard({super.key});
 
   @override
-  State<ImageCard> createState() => _ImageCardState();
+  State<LocationsCard> createState() => _LocationsCardState();
 }
 
-class _ImageCardState extends State<ImageCard> {
+class _LocationsCardState extends State<LocationsCard> {
   final pageController = PageController(viewportFraction: 0.8);
   int pageIndex = 0;
 
@@ -21,7 +22,7 @@ class _ImageCardState extends State<ImageCard> {
               itemCount: locations.length,
               itemBuilder: (context, index) {
                 final location = locations[index];
-                return ItemCard();
+                return ImageCard(location: location);
               },
               onPageChanged: (index) => setState(() {
                 pageIndex = index;
@@ -35,30 +36,4 @@ class _ImageCardState extends State<ImageCard> {
           const SizedBox(height: 12)
         ],
       );
-}
-
-class ItemCard extends StatefulWidget {
-  const ItemCard({super.key});
-
-  @override
-  State<ItemCard> createState() => _ItemCardState();
-}
-
-class _ItemCardState extends State<ItemCard> {
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 4),
-      child: Stack(
-        alignment: Alignment.center,        
-        children: [
-          Container()
-        ],
-      ),
-    );
-  }
-
-  
 }

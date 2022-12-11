@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation/widget/image_cards.dart';
+import 'package:flutter_animation/widget/locations_cards.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
-        body: const ImageCard(),
+        body: const LocationsCard(),
         bottomNavigationBar: buildBottomNavigation(),
       );
 
