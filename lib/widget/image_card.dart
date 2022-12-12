@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation/data/locations.dart';
 import 'package:flutter_animation/models/location.dart';
 import 'package:flutter_animation/widget/details_cont.dart';
 import 'package:flutter_animation/widget/image_widget.dart';
@@ -24,15 +25,18 @@ class _ImageCardState extends State<ImageCard> {
         alignment: Alignment.center,
         children: [
           AnimatedPositioned(
-            duration: const Duration(microseconds: 500),
-            bottom: isExpanded ? 40 : 100,
+            duration: const Duration(milliseconds: 500),
+            bottom: isExpanded ? 60 : 100,
             width: isExpanded ? size.width * 0.78 : size.width * 0.7,
-            height: isExpanded ? size.height * 0.6 : size.height * 0.5,
-            child: const DetailsContainer(),
+            height: isExpanded ? size.height * 0.60 : size.height * 0.5,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: isExpanded ? 1 : 0,
+              child: DetailsContainer(locations: widget.location)),
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500),
-            bottom: isExpanded ? 150 : 100,
+            bottom: isExpanded ? 280 : 100,
             child: GestureDetector(
               onPanUpdate: onUpdate,
               child: ImageWidget(location: widget.location),

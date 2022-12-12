@@ -11,7 +11,7 @@ class ImageWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      width: size.width * 0.8,
+      width: size.width * 0.78,
       height: size.height * 0.5,
       child: Stack(
         children: [

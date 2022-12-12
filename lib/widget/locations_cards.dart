@@ -33,7 +33,7 @@ class _LocationsCardState extends State<LocationsCard> {
             '${pageIndex + 1}/${locations.length}',
             style: const TextStyle(color: Colors.white70),
           ),
-          const SizedBox(height: 12)
+          // const SizedBox(height: 12)
         ],
       );
 }

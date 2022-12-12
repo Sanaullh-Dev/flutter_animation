@@ -7,7 +7,7 @@ List<Locations> locations = [
     urlImage: 'assets/mountain.jpg',
     addressLine1: 'La Cresenta-Montrose, CA91020 Glendale',
     addressLine2: 'NO. 791187',
-    starRating: 4,
+    starRating: 2,
     latitude: 'NORTH LAT 24',
     longitude: 'EAST LNG 17',
     reviews: Reviews.allReviews,
