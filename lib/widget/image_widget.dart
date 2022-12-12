@@ -1,32 +1,72 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_animation/models/location.dart';
 
-// class ImageWidget extends StatelessWidget {
-//   final Size size;
-//   const ImageWidget({super.key, required this.size});
+class ImageWidget extends StatelessWidget {
+  final Locations location;
+  const ImageWidget({super.key, required this.location});
 
-//   @override
-//   Widget build(BuildContext context) {
-//    return Container(
-//       height: size.height * 0.5,
-//       width: size.width * 0.8,
-//       decoration: const BoxDecoration(
-//           boxShadow: [
-//             BoxShadow(color: Colors.black26, blurRadius: 2, spreadRadius: 1),
-//           ],
-//           borderRadius: BorderRadius.all(Radius.circular(8)),
-//         ),
-//         child: Stack(
-//           children: [
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
 
-//           ],
-//         ),
-//     );
-//   }
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      width: size.width * 0.8,
+      height: size.height * 0.5,
+      child: Stack(
+        children: [
+          buildImage(),
+          Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+              boxShadow: [
+                BoxShadow(color: Colors.black26, blurRadius: 2, spreadRadius: 1)
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(location.name, style: customsTextStyle()),
+                ),
+                latLongWidget()
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-//   Widget buildImage() => SizedBox.expand(
-//     child: ClipRRect(
-//       borderRadius: BorderRadius.all(Radius.circular(8)),
-//       child: image
-//       ),
-//   );
-// }
+  Widget buildImage() => SizedBox.expand(
+        child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(12)),
+            child: Image.asset(location.urlImage, fit: BoxFit.cover)),
+      );
+
+  Widget latLongWidget() => Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              location.latitude,
+              style: customsTextStyle().copyWith(fontSize: 20),
+            ),
+            const Icon(Icons.location_on, size: 30, color: Colors.white),
+            Text(
+              location.longitude,
+              style: customsTextStyle().copyWith(fontSize: 20),
+            ),
+          ],
+        ),
+      );
+
+  TextStyle customsTextStyle() => const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25);
+}

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation/models/location.dart';
 
 class CardImage extends StatelessWidget {
-  final Location location;
+  final Locations location;
   const CardImage({super.key, required this.location});
 
   @override

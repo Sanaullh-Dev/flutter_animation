@@ -1,6 +1,6 @@
 import 'package:flutter_animation/models/review.dart';
 
-class Location {
+class Locations {
   final String name;
   final String urlImage;
   final String latitude;
@@ -10,7 +10,7 @@ class Location {
   final int starRating;
   final List<Review> reviews;
 
-  Location({
+  Locations({
     required this.reviews,
     required this.name,
     required this.urlImage,

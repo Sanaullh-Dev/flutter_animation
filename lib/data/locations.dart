@@ -1,8 +1,8 @@
 import 'package:flutter_animation/data/reviews.dart';
 import 'package:flutter_animation/models/location.dart';
 
-List<Location> locations = [
-  Location(
+List<Locations> locations = [
+  Locations(
     name: 'ATCOASTAL',
     urlImage: 'assets/mountain.jpg',
     addressLine1: 'La Cresenta-Montrose, CA91020 Glendale',
@@ -12,7 +12,7 @@ List<Location> locations = [
     longitude: 'EAST LNG 17',
     reviews: Reviews.allReviews,
   ),
-  Location(
+  Locations(
     name: 'SYRACUSE',
     urlImage: 'assets/mountain2.jpg',
     addressLine1: 'La Cresenta-Montrose, CA91020 Glendale',
@@ -22,7 +22,7 @@ List<Location> locations = [
     longitude: 'EAST LNG 27',
     reviews: Reviews.allReviews,
   ),
-  Location(
+  Locations(
     name: 'OCEANIC',
     urlImage: 'assets/sea.jpg',
     addressLine1: 'La Cresenta-Montrose, CA91020 Glendale',
@@ -32,7 +32,7 @@ List<Location> locations = [
     longitude: 'WEST LNG 08',
     reviews: Reviews.allReviews,
   ),
-  Location(
+  Locations(
     name: 'MOUNTAINOUS',
     urlImage: 'assets/sea2.jpg',
     addressLine1: 'La Cresenta-Montrose, CA91020 Glendale',
